@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
 import 'webrtc-adapter';
 import socket from './socket';
+import { useNavigate } from 'react-router-dom';
+
 function Home() {
+    const navigate = useNavigate();
     const videoRef = useRef(null);
     const remoteVideoRef = useRef(null);
     const iceConfiguration = {
@@ -180,6 +183,7 @@ function Home() {
             />
             <button onClick={makeCall}>send</button>
             <button onClick={handle}>Send message</button>
+            <button onClick={() => navigate('/login')}>Login</button>
         </>
     );
 }
