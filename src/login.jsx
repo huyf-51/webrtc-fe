@@ -4,9 +4,12 @@ import { useState } from 'react';
 const Login = () => {
     const [name, setName] = useState('');
     const handle = async () => {
-        const res = await axios.post('http://localhost:3000/login', {
-            name: name,
-        });
+        const res = await axios.post(
+            `${import.meta.env.VITE_REACT_API_SERVER}/login`,
+            {
+                name: name,
+            }
+        );
         localStorage.setItem('userId', res.data);
     };
     return (

@@ -7,9 +7,9 @@ function Home() {
     const iceConfiguration = {
         iceServers: [
             {
-                urls: 'turn:192.168.1.5:3478',
-                username: 'huyfst',
-                credential: '123456',
+                urls: import.meta.env.VITE_REACT_TURN_SERVER_URL,
+                username: import.meta.env.VITE_REACT_TURN_SERVER_USERNAME,
+                credential: import.meta.env.VITE_REACT_TURN_SERVER_CREDENTIAL,
             },
         ],
         iceTransportPolicy: 'relay',
